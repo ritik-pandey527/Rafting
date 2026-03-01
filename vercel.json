@@ -1,10 +1,17 @@
 {
+  "version": 3,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "src": "dist/index.cjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.cjs"
     }
   ]
 }
